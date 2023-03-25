@@ -111,11 +111,12 @@ button.addEventListener('click', () => {
     })
 })
 
-//function to round to two decimal places and convert to kg
+//function to round to one decimal places and convert to kg
 function calculate(num) {
-  const number = Math.round(+num)
-  return Math.round(number / 1000)
+  const number = Math.round(+num * 10) / 10
+  return Math.round((number / 1000) * 10) / 10
 }
+
 
 const displayResults = (data) => {
   const emissions = document.querySelector('.emissions')
@@ -135,7 +136,7 @@ const calculateEquivalents = (data) => {
   milk.textContent = calculate(data.carbonEmissions / 1.6)
   bitcoin.textContent = calculate(data.carbonEmissions / 111)
   visa.textContent = calculate(data.carbonEmissions / 0.02)
-  washingMachine.textContent = calculate(data.carbonEmissions / 0.012)
+  washingMachine.textContent = calculate(data.carbonEmissions / 0.72)
 }
 
 function checkInput() {
