@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="stylesheet" href="/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Air Footprint</title>
+  </head>
+
+  <body>
+    <header aria-label="Site Header" class="bg-white text-whitecap-100">
+      <div
+        class="mx-auto flex h-10 max-w-screen-xl items-center  px-4 sm:px-6 lg:px-8"
+      >
+        <a class="block text-sand-100" href="/">
+          <span class="sr-only">Home</span>
+          <img class="h-15 mt-12" src="/logo.png" />
+        </a>
+
+        <div class="flex flex-1 items-center justify-end md:justify-between">
+          <nav aria-label="Site Nav" class="hidden md:block"></nav>
+        </div>
+      </div>
+    </header>
+    <!--
+  This component uses @tailwindcss/forms
+
+  yarn add @tailwindcss/forms
+  npm install @tailwindcss/forms
+
+  plugins: [require('@tailwindcss/forms')]
+-->
+
+    <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="mx-auto max-w-lg text-center">
+        <h1 class="text-2xl text-sand-100 font-bold sm:text-3xl">
+          Air Footprint
+        </h1>
+
+        <p class="mt-4 text-gray-900">
+          Track your flight carbon footprint and join us in the fight against
+          climate change.
+        </p>
+      </div>
+
+      <div class="mx-auto mt-8 mb-0 max-w-md space-y-4">
+        <div>
+          <label for="departure" class="sr-only">Departure</label>
+
+          <div class="relative">
+            <input
+              id="departure"
+              type="text"
+              class="w-full rounded-lg border-gray-400 p-4 pr-12 text-sm shadow-sm"
+              placeholder="Enter departure airport"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label for="destination" class="sr-only">Destination</label>
+
+          <div class="relative">
+            <input
+              id="destination"
+              type="text"
+              class="w-full rounded-lg border-gray-400 p-4 pr-12 text-sm shadow-sm"
+              placeholder="Enter destination airport"
+            />
+          </div>
+        </div>
+
+        <div class="flex items-center justify-center">
+          <button
+            type="button"
+            id="calculate"
+            class="inline-block rounded-lg bg-sand-100 hover:bg-vitality-100 px-5 py-3 text-sm font-medium text-whitecap-100"
+          >
+            Calculate
+          </button>
+        </div>
+      </div>
+      <section class=" mt-5  text-sand-100">
+  <div class="max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8">
+    <div class="w-full text-center">
+      
+
+      <h3 class="font-bold sm:text-xl md:text-2xl text-gray-900">
+      Your flight will emit <span class="emissions">0</span> kg of CO2. </h3> 
+      <p class="mt-2 font-bold sm:text-lg md:text-xl">This is equivalent to the following daily activites:
+     </p>
+    </div>
+
+    <div
+      class="mt-8 grid grid-cols-1 gap-8 md:mt-16 md:grid-cols-2 md:gap-12 lg:grid-cols-3"
+    >
+      <div class="flex items-start gap-4">
+        <span class="shrink-0 rounded-lg text-3xl p-4">
+         ☕
+        </span>
+
+        <div>
+          <h2 class="text-lg font-bold"><span class="coffee">0</span> cups of coffee</h2>
+
+          <p class="mt-1 text-sm text-gray-900">
+            Production and transportation of coffee contribute to carbon emissions, but the exact amount varies depending on the source and method.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-4">
+        <span class="shrink-0 rounded-lg text-3xl p-4">
+          🐄
+        </span>
+
+        <div>
+          <h2 class="text-lg font-bold"><span class="beef">0</span> kilos of beef</h2>
+
+          <p class="mt-1 text-sm text-gray-900">
+           Beef production generates significant carbon emissions due to deforestation, feed production, and methane emissions from cows.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-4">
+        <span class="shrink-0 rounded-lg text-3xl  p-4">
+          🥛
+        </span>
+
+        <div>
+          <h2 class="text-lg font-bold"><span class="milk">0</span> liters of milk</h2>
+
+          <p class="mt-1 text-sm text-gray-900">
+            Dairy farming produces methane emissions, a potent greenhouse gas, but varies depending on farming practices and location.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-4">
+        <span class="shrink-0 rounded-lg  text-3xl p-4">
+         💰
+        </span>
+
+        <div>
+          <h2 class="text-lg font-bold"><span class="bitcoin">0</span> bitcoin transactions</h2>
+
+          <p class="mt-1 text-sm text-gray-900">
+            The mining process for Bitcoin consumes a large amount of energy, resulting in significant carbon emissions.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-4">
+        <span class="shrink-0 rounded-lg text-3xl p-4">
+          💸
+        </span>
+
+        <div>
+          <h2 class="text-lg font-bold"><span class="visa">0</span> visa transactions</h2>
+
+          <p class="mt-1 text-sm text-gray-900">
+            Visa transactions produce carbon emissions due to the energy consumed by servers and data centers during the process.
+          </p>
+        </div>
+      </div>
+
+      <div class="flex items-start gap-4">
+        <span class="shrink-0 rounded-lg text-3xl p-4">
+       🧼
+        </span>
+
+        <div>
+          <h2 class="text-lg font-bold"><span class="washing">0</span> mins of a washing machine</h2>
+
+          <p class="mt-1 text-sm text-gray-900">
+            Washing machines can consume a significant amount of energy, but energy-efficient models can reduce carbon emissions.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    </div>
+
+    <footer aria-label="Site Footer" class="bg-whitecap-100">
+      <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
+        <div class="flex justify-center text-sand-100">
+          <!-- Add logo or something interesting here-->
+          <div class="space-y-4">
+            <details
+              class="group [&_summary::-webkit-details-marker]:hidden"
+              open
+            >
+              <summary
+                class="flex items-center justify-between p-4 rounded-lg cursor-pointer bg-gray-50"
+              >
+                <h2 class="font-medium text-gray-900">
+                  How accurate are these calculations?
+                </h2>
+
+                <svg
+                  class="ml-1.5 h-5 w-5 flex-shrink-0 transition duration-300 group-open:-rotate-180"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </summary>
+
+              <p class="px-4 mt-4 leading-relaxed text-gray-700">
+                Our carbon emissions calculator provides an estimate of the carbon dioxide emissions resulting from your flight(s). Please note that this is for informational purposes only and the formulas used to calculate emissions were gathered from various sources on the web. We cannot guarantee their accuracy, but we strive to provide the most up-to-date and reliable data available
+              </p>
+            </details>
+
+            <details class="group [&_summary::-webkit-details-marker]:hidden">
+              <summary
+                class="flex items-center justify-between p-4 rounded-lg cursor-pointer bg-gray-50"
+              >
+                <h2 class="font-medium text-gray-900">
+                  Do you intend on adding more information?
+                </h2>
+
+                <svg
+                  class="ml-1.5 h-5 w-5 flex-shrink-0 transition duration-300 group-open:-rotate-180"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </summary>
+
+              <p class="px-4 mt-4 leading-relaxed text-gray-700">
+                We are committed to continuously improving our carbon emissions calculator and plan to add additional estimates as our project evolves. Our goal is to provide our users with the most comprehensive information possible so that they can make informed decisions about their carbon footprint. Thank you for your support and patience as we work to enhance this important tool.
+              </p>
+            </details>
+          </div>
+        </div>
+
+        <ul class="mt-12 flex justify-center gap-6 md:gap-8">
+          <li>
+            <a
+              href="/"
+              rel="noreferrer"
+              target="_blank"
+              class="text-gray-700 transition hover:text-gray-700/75"
+            >
+              <span class="sr-only">GitHub</span>
+              <svg
+                class="h-6 w-6"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+   
+        
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

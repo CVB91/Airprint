@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+estimateNumber{
+  display: none;
+}
+
+.modal {
+  /* Rest of your modal styles */
+  position: relative;
+}
+
+.spinner {
+  z-index: 50;
+}
+
+.spinner.hidden {
+  display: none;
+}
