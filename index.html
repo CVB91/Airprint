@@ -5,7 +5,7 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link rel="stylesheet" href="/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Air Footprint</title>
+    <title>Airprint</title>
   </head>
 
   <body>
@@ -35,7 +35,7 @@
     <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-lg text-center">
         <h1 class="text-2xl text-sand-100 font-bold sm:text-3xl">
-          Air Footprint
+          Airprint
         </h1>
 
         <p class="mt-4 text-gray-900">
@@ -53,7 +53,7 @@
               id="departure"
               type="text"
               class="w-full rounded-lg border-gray-400 p-4 pr-12 text-sm shadow-sm"
-              placeholder="Enter departure airport"
+              placeholder="Enter departure airport" 
             />
           </div>
         </div>
@@ -66,7 +66,7 @@
               id="destination"
               type="text"
               class="w-full rounded-lg border-gray-400 p-4 pr-12 text-sm shadow-sm"
-              placeholder="Enter destination airport"
+              placeholder="Enter destination airport" 
             />
           </div>
         </div>
@@ -77,7 +77,8 @@
             id="calculate"
             class="inline-block rounded-lg bg-sand-100 hover:bg-vitality-100 px-5 py-3 text-sm font-medium text-whitecap-100"
           >
-            Calculate
+            <span id="buttonText">Calculate</span>
+            <div id="spinner" class="hidden inline-block animate-spin rounded-full h-5 w-5 border-t-2 border-b-2 border-whitecap-100"></div>
           </button>
         </div>
       </div>

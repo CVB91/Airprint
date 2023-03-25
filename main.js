@@ -62,7 +62,15 @@ fetchData(destination, renderDestination)
 
 // Button to send data to Flight Carbon API
 const button = document.querySelector('#calculate')
+const spinner = document.querySelector('#spinner')
+const buttonText = document.querySelector('#buttonText')
 button.addEventListener('click', () => {
+  checkInput()
+
+  buttonText.classList.add('hidden')
+  spinner.classList.remove('hidden')
+
+
   const departure = extractIataCode(document.querySelector('#departure').value)
   const destination = extractIataCode(
     document.querySelector('#destination').value
@@ -73,8 +81,10 @@ button.addEventListener('click', () => {
     destination,
   }
   console.log(data)
+  
 
-  const token = 'jAY_qpSCJbisdsjNSAutJ5IAarb5HcwF'
+  const token = import.meta.env.VITE_FLIGHT_CARBON_API_KEY
+  console.log(token)
   const options = {
     method: 'POST',
     url: 'https://flight-carbon-api.vercel.app/api/v1/flightcarbon',
@@ -97,6 +107,12 @@ button.addEventListener('click', () => {
     .catch(function (error) {
       console.error(error)
     })
+    .finally(() => {
+      spinner.classList.add('hidden')
+      buttonText.classList.remove('hidden')
+     })
+  
+  
 })
 
 //function to round to two decimal places and convert to kg
@@ -125,5 +141,21 @@ const calculateEquivalents = (data) => {
   bitcoin.textContent = calculate(data.carbonEmissions / 401)
   visa.textContent = calculate(data.carbonEmissions / 0.04)
   washingMachine.textContent = calculate((data.carbonEmissions / 2.4) * 60)
+
+ }
+
+ function checkInput() {
+   const departure = document.getElementById('departure').value
+   const destination = document.getElementById('destination').value
+   if (departure === '') {
+     alert('Please enter a departure airport.')
+   }
+   if (destination === '') {
+     alert('Please enter a destination airport.')
+   }
+
+   if(destination && departure === '') {
+     alert('Please enter a departure and destination airport.')
+   }
 
  }
